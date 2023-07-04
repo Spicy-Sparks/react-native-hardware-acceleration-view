@@ -15,9 +15,11 @@ import HardwareAccelerationView from "react-native-hardware-acceleration-view";
 
 // ...
 
-<HardwareAccelerationViewView accelerated={true}>
+const [accelerated, setAccelerated] = useState(false)
+
+<HardwareAccelerationView accelerated={accelerated}>
     <Animated.View style={animatedStyle} />
-</HardwareAccelerationViewView>
+</HardwareAccelerationView>
 ```
 
 ## Contributing
