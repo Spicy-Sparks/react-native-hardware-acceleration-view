@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import {
   requireNativeComponent,
   UIManager,
@@ -12,15 +13,15 @@ const LINKING_ERROR =
   '- You are not using Expo Go\n';
 
 type HardwareAccelerationViewProps = {
-  color: string;
-  style: ViewStyle;
+  children?: ReactNode;
+  style?: ViewStyle;
+  accelerated: boolean;
 };
 
-const ComponentName = 'HardwareAccelerationViewView';
+const ComponentName = 'HardwareAccelerationView';
 
-export const HardwareAccelerationViewView =
-  UIManager.getViewManagerConfig(ComponentName) != null
-    ? requireNativeComponent<HardwareAccelerationViewProps>(ComponentName)
-    : () => {
-        throw new Error(LINKING_ERROR);
-      };
+export default UIManager.getViewManagerConfig(ComponentName) != null
+  ? requireNativeComponent<HardwareAccelerationViewProps>(ComponentName)
+  : () => {
+      throw new Error(LINKING_ERROR);
+    };

@@ -1,12 +1,13 @@
 import * as React from 'react';
-
 import { StyleSheet, View } from 'react-native';
-import { HardwareAccelerationViewView } from 'react-native-hardware-acceleration-view';
+import HardwareAccelerationView from 'react-native-hardware-acceleration-view';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <HardwareAccelerationViewView color="#32a852" style={styles.box} />
+      <HardwareAccelerationView accelerated={false} style={styles.box}>
+        <View style={styles.boxInner} />
+      </HardwareAccelerationView>
     </View>
   );
 }
@@ -18,8 +19,16 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   box: {
+    width: 120,
+    height: 120,
+    marginVertical: 20,
+    backgroundColor: 'blue',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  boxInner: {
     width: 60,
     height: 60,
-    marginVertical: 20,
+    backgroundColor: 'azure',
   },
 });

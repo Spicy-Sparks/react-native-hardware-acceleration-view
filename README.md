@@ -11,11 +11,13 @@ npm install react-native-hardware-acceleration-view
 ## Usage
 
 ```js
-import { HardwareAccelerationViewView } from "react-native-hardware-acceleration-view";
+import HardwareAccelerationView from "react-native-hardware-acceleration-view";
 
 // ...
 
-<HardwareAccelerationViewView color="tomato" />
+<HardwareAccelerationViewView accelerated={true}>
+    <Animated.View style={animatedStyle} />
+</HardwareAccelerationViewView>
 ```
 
 ## Contributing
